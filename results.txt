@@ -1,0 +1,45 @@
+Q1: Overall churn rate
+ customers  churned  churn_pct
+      7043     1869       26.5
+
+Q2: Churn rate by contract type
+      Contract  customers  churn_pct
+Month-to-month       3875       42.7
+      One year       1473       11.3
+      Two year       1695        2.8
+
+Q3: Average tenure and monthly charges, churned vs stayed
+Churn  avg_tenure_months  avg_monthly_charges
+   No               37.6                61.27
+  Yes               18.0                74.44
+
+Q4: Churn rate by internet service
+InternetService  customers  churn_pct
+    Fiber optic       3096       41.9
+            DSL       2421       19.0
+             No       1526        7.4
+
+Q5: Payment methods with churn above the overall average (HAVING + subquery)
+   PaymentMethod  churn_pct
+Electronic check       45.3
+
+Q6: Monthly revenue lost to churned customers
+ monthly_revenue_lost
+            139130.85
+
+Q7: Churn rate by tenure group (CASE)
+   tenure_group  customers  churn_pct
+ 1: 0-12 months       2186       47.4
+2: 13-24 months       1024       28.7
+3: 25-48 months       1594       20.4
+  4: 49+ months       2239        9.5
+
+Q8: Rank contract types by churn risk (CTE + window function)
+      Contract  churn_pct  risk_rank
+Month-to-month       42.7          1
+      One year       11.3          2
+      Two year        2.8          3
+
+Q9: High-risk segment: month-to-month, fiber optic, no tech support
+ customers  churn_pct
+      1796       57.5
